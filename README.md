@@ -2,6 +2,7 @@
 
 Haxe implementation of [Google's polyline algorithm](https://developers.google.com/maps/documentation/utilities/polylinealgorithm)
 
+Ported from https://github.com/mapbox/polyline
 
 ## Usage
 

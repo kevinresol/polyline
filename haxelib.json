@@ -1,0 +1,12 @@
+{
+  "name": "polyline",
+  "url": "https://github.com/kevinresol/polyline",
+  "license": "MIT",
+  "classPath": "src",
+  "tags":["google", "polyline", "cross"],
+  "description": "Haxe implementation of Google's polyline algorithm",
+  "contributors": ["kevinresol"],
+  "releasenote": "Initial release",
+  "version": "1.0.0",
+  "dependencies": {}
+}

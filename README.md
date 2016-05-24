@@ -1,4 +1,4 @@
-# polyline
+# polyline [![Build Status](https://travis-ci.org/kevinresol/polyline.svg?branch=master)](https://travis-ci.org/kevinresol/polyline)
 
 Haxe implementation of [Google's polyline algorithm](https://developers.google.com/maps/documentation/utilities/polylinealgorithm)
 

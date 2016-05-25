@@ -59,7 +59,7 @@ class RunTests extends TestCase {
 		assertTrue(decode(encode([{latitude:-107.3741825, longitude:0}], 7), 7)[0].latitude < 0);
 	}
 	
-	function assertCoordinates(expected:Array<Coordinate>, actual:Array<Coordinate>) {
+	function assertCoordinates(expected:Array<Coordinates>, actual:Array<Coordinates>) {
 		assertEquals(expected.length, actual.length);
 		for(i in 0...expected.length) {
 			assertEquals(expected[i].latitude, actual[i].latitude);

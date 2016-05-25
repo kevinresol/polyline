@@ -2,7 +2,7 @@ package polyline;
 
 class Polyline {
 	
-	public static function encode(coordinates:Array<Coordinate>, precision = 5):String {
+	public static function encode(coordinates:Array<Coordinates>, precision = 5):String {
 		if(coordinates == null || coordinates.length == 0) return '';
 		var factor = Math.pow(10, precision);
 		var output = new StringBuf();
@@ -30,7 +30,7 @@ class Polyline {
 		return output.toString();
 	}
 	
-	public static function decode(str:String, precision = 5):Array<Coordinate> {
+	public static function decode(str:String, precision = 5):Array<Coordinates> {
 		var factor = Math.pow(10, precision);
 		var pos = 0;
 		
@@ -61,7 +61,7 @@ class Polyline {
 	}
 }
 
-typedef Coordinate = {
+typedef Coordinates = {
 	latitude:Float,
 	longitude:Float,
 }

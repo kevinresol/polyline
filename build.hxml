@@ -1,4 +1,5 @@
 -cp tests
 -main RunTests
 -js bin/tests.js
+-lib hxnodejs
 -lib polyline

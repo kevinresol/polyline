@@ -5,6 +5,12 @@ import haxe.unit.TestRunner;
 import polyline.Polyline.*;
 import polyline.Polyline;
 
+#if flash
+import flash.system.System.exit;
+#else
+import Sys.exit;
+#end
+
 class RunTests extends TestCase {
 	
 	var example = [{
@@ -32,9 +38,7 @@ class RunTests extends TestCase {
 	static function main() {
 		var t = new TestRunner();
 		t.add(new RunTests());
-		if(!t.run()) {
-			#if sys Sys.exit(500); #end
-		}
+		exit(t.run() ? 0 : 500);
 	}
 	
 	function testEncode() {

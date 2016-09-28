@@ -3,7 +3,7 @@ package;
 import haxe.unit.TestCase;
 import haxe.unit.TestRunner;
 import polyline.Polyline.*;
-import polyline.Polyline;
+import polyline.Coordinates;
 
 #if flash
 import flash.system.System.exit;
@@ -13,27 +13,17 @@ import Sys.exit;
 
 class RunTests extends TestCase {
 	
-	var example = [{
-		latitude: 38.5,
-		longitude: -120.2
-	},{
-		latitude: 40.7,
-		longitude: -120.95
-	},{
-		latitude: 43.252,
-		longitude: -126.453
-	}];
+	var example = [
+		new Coordinates(38.5, -120.2),
+		new Coordinates(40.7, -120.95),
+		new Coordinates(43.252, -126.453),
+	];
 	
-	var exampleSlashes = [{
-		latitude: 35.6,
-		longitude: -82.55
-	},{
-		latitude: 35.59985,
-		longitude: -82.55015
-	},{
-		latitude: 35.6,
-		longitude: -82.55
-	}];
+	var exampleSlashes = [
+		new Coordinates(35.6, -82.55),
+		new Coordinates(35.59985, -82.55015),
+		new Coordinates(35.6, -82.55),
+	];
 	
 	static function main() {
 		var t = new TestRunner();
@@ -60,7 +50,7 @@ class RunTests extends TestCase {
 		assertCoordinates(exampleSlashes, decode(encode(exampleSlashes)));
 		assertCoordinates(exampleSlashes, decode(encode(exampleSlashes, 6), 6));
 		assertEquals('_chxEn`zvN\\\\]]', encode(decode('_chxEn`zvN\\\\]]')));
-		assertTrue(decode(encode([{latitude:-107.3741825, longitude:0}], 7), 7)[0].latitude < 0);
+		assertTrue(decode(encode([new Coordinates(-107.3741825, 0)], 7), 7)[0].latitude < 0);
 	}
 	
 	function assertCoordinates(expected:Array<Coordinates>, actual:Array<Coordinates>) {

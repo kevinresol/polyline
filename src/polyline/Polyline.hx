@@ -1,5 +1,7 @@
 package polyline;
 
+import polyline.Coordinates;
+
 class Polyline {
 	
 	public static function encode(coordinates:Array<Coordinates>, precision = 5):String {
@@ -54,14 +56,9 @@ class Polyline {
 		while(pos < str.length) {
 			lat += decodeValue(true);
 			long += decodeValue();
-			result.push({latitude: lat / factor, longitude: long / factor});
+			result.push(new Coordinates(lat / factor, long / factor));
 		}
 		
 		return result;
 	}
-}
-
-typedef Coordinates = {
-	latitude:Float,
-	longitude:Float,
 }

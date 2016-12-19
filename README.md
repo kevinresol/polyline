@@ -7,16 +7,11 @@ Ported from https://github.com/mapbox/polyline
 ## Usage
 
 ```haxe
-var example = [{
-	latitude: 38.5,
-	longitude: -120.2
-},{
-	latitude: 40.7,
-	longitude: -120.95
-},{
-	latitude: 43.252,
-	longitude: -126.453
-}];
+var example = [
+	new Coordinates(38.5, -120.2),
+	new Coordinates(40.7, -120.95),
+	new Coordinates(43.252, -126.453),
+];
 
 var encoded = Polyline.encode(example);
 var decoded = Polyline.decode(encoded);
